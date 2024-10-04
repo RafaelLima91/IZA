@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-10-03T21:38:40.762970" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="c:\Users\Rafael\PycharmProjects\IZA_Automation\Tests\Login.robot">
+<test id="s1-t1" name="Acessar o Fale com nosso time comercial no Login" line="13">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-03T21:38:40.931589" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-03T21:38:41.186703" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-03T21:38:40.930582" elapsed="1.833624"/>
+</kw>
+<status status="PASS" start="2024-10-03T21:38:40.930582" elapsed="1.834625"/>
+</kw>
+<kw name="Clicar em Fale com nosso time comercial" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.link_FaleComercial}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.768325" elapsed="0.030645"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-03T21:38:42.799967" level="INFO">Clicking element 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[2]/a/span'.</msg>
+<arg>locator=${Login.link_FaleComercial}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.798970" elapsed="0.130063"/>
+</kw>
+<status status="PASS" start="2024-10-03T21:38:42.767330" elapsed="0.161703"/>
+</kw>
+<kw name="Redireciona para o Portal IZA com sucesso" owner="Login_Steps">
+<kw name="Get Window Handles" owner="SeleniumLibrary">
+<msg time="2024-10-03T21:38:42.942929" level="INFO">${windows} = ['6C42E4BB591FCA8E8AD1AF793CFF86D8', '6C4A9A212C4A399C63C521D3F7ADE000']</msg>
+<var>${windows}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.931028" elapsed="0.011901"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-03T21:38:42.943936" level="INFO">Lista de janelas: ['6C42E4BB591FCA8E8AD1AF793CFF86D8', '6C4A9A212C4A399C63C521D3F7ADE000']</msg>
+<arg>Lista de janelas: ${windows}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.943936" elapsed="0.001004"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<msg time="2024-10-03T21:38:42.944940" level="INFO">Length is 2.</msg>
+<arg>${windows}</arg>
+<arg>2</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.944940" elapsed="0.001305"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-03T21:38:42.947248" level="INFO">Nova janela aberta: 6C4A9A212C4A399C63C521D3F7ADE000</msg>
+<arg>Nova janela aberta: ${windows[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.946245" elapsed="0.001003"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>${windows[1]}</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-10-03T21:38:42.947248" elapsed="0.067725"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Seguro Acidente Pessoal</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-03T21:38:43.015970" elapsed="0.650221"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-03T21:38:43.694939" level="INFO">Current location is 'https://iza.com.vc/para-empresa'.</msg>
+<arg>${url_FaleComercial}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-10-03T21:38:43.667187" elapsed="0.027752"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-03T21:38:43.694939" elapsed="2.195811"/>
+</kw>
+<status status="PASS" start="2024-10-03T21:38:42.930030" elapsed="2.960720"/>
+</kw>
+<status status="PASS" start="2024-10-03T21:38:40.929572" elapsed="4.961178"/>
+</test>
+<doc>Teste efetuando o login no portal B2B</doc>
+<status status="PASS" start="2024-10-03T21:38:40.767955" elapsed="5.123792"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-03T21:38:40.923155" level="ERROR">Error in file 'c:\Users\Rafael\PycharmProjects\IZA_Automation\Resource\Settings.resource' on line 3: Library 'cpf_generator.py' does not exist.</msg>
+<msg time="2024-10-03T21:38:40.925148" level="ERROR">Error in file 'c:\Users\Rafael\PycharmProjects\IZA_Automation\Resource\Settings.resource' on line 4: Library 'email_generator.py' does not exist.</msg>
+<msg time="2024-10-03T21:38:40.927141" level="ERROR">Error in file 'c:\Users\Rafael\PycharmProjects\IZA_Automation\Resource\Settings.resource' on line 5: Library 'telefone_generator.py' does not exist.</msg>
+<msg time="2024-10-03T21:38:41.186703" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

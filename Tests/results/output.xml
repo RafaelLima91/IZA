@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-10-04T01:35:16.596194" rpa="false" schemaversion="5">
+<suite id="s1" name="FaturamentoB2bMensal" source="C:\Users\Rafael\PycharmProjects\IZA_Automation\Tests\FaturamentoB2bMensal.robot">
+<test id="s1-t1" name="Validar Relatório no Faturamento no usuário Mensal" line="8">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:16.764402" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T01:35:17.068294" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T01:35:16.764402" elapsed="1.912818"/>
+</kw>
+<status status="PASS" start="2024-10-04T01:35:16.764402" elapsed="1.914243"/>
+</kw>
+<kw name="Inserir usuário e senha válidos do plano Mensal" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.678645" elapsed="0.031495"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:18.710140" level="INFO">Typing text 'bonita35@gmail.com' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=${EmailValidoMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.710140" elapsed="0.116215"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.826355" elapsed="0.012424"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:18.840274" level="INFO">Typing text 'ParceiroIZA@1' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=${SenhaValidaMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.838779" elapsed="0.065737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.904516" elapsed="0.013852"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:18.919379" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.918368" elapsed="0.060335"/>
+</kw>
+<status status="PASS" start="2024-10-04T01:35:18.678645" elapsed="0.300058"/>
+</kw>
+<kw name="Acessar Faturamento com sucesso" owner="FaturamentoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FatMensal.button_AmbienteProd}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T01:35:18.978703" elapsed="2.348328"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:21.328028" level="INFO">Clicking button 'xpath://*[@id="__next"]/div/div[1]/div/div[1]/button'.</msg>
+<arg>locator=${FatMensal.button_AmbienteProd}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T01:35:21.327031" elapsed="1.015158"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T01:35:24.342466" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T01:35:22.342189" elapsed="2.000277"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FatMensal.opção_Faturamento}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T01:35:24.342466" elapsed="0.036006"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:24.379479" level="INFO">Clicking button 'id:accordion-button-3'.</msg>
+<arg>locator=${FatMensal.opção_Faturamento}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T01:35:24.378472" elapsed="0.065155"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Faturamento</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T01:35:24.444638" elapsed="0.032354"/>
+</kw>
+<status status="PASS" start="2024-10-04T01:35:18.978703" elapsed="5.498289"/>
+</kw>
+<kw name="Relatório de faturamento gerado com sucesso" owner="FaturamentoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FatMensal.opção_RelatorioFat}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T01:35:24.477988" elapsed="0.287644"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:24.765632" level="INFO">Clicking element 'class:css-mvahww'.</msg>
+<arg>locator=${FatMensal.opção_RelatorioFat}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T01:35:24.765632" elapsed="0.028997"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2024-10-04T01:35:24.794629" level="FAIL">Keyword 'SeleniumLibrary.Wait Until Page Contains' got positional argument after named arguments.</msg>
+<arg>text=Relatório baixado com sucesso</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2024-10-04T01:35:24.794629" elapsed="0.000000">Keyword 'SeleniumLibrary.Wait Until Page Contains' got positional argument after named arguments.</status>
+</kw>
+<status status="FAIL" start="2024-10-04T01:35:24.476992" elapsed="0.317637">Keyword 'SeleniumLibrary.Wait Until Page Contains' got positional argument after named arguments.</status>
+</kw>
+<status status="FAIL" start="2024-10-04T01:35:16.763468" elapsed="8.032155">Keyword 'SeleniumLibrary.Wait Until Page Contains' got positional argument after named arguments.</status>
+</test>
+<doc>Teste Faturamento Plano Mensal portal B2B</doc>
+<status status="FAIL" start="2024-10-04T01:35:16.597190" elapsed="8.199421"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="FaturamentoB2bMensal">FaturamentoB2bMensal</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-04T01:35:16.758652" level="ERROR">Error in file 'C:\Users\Rafael\PycharmProjects\IZA_Automation\Resource\Settings.resource' on line 3: Library 'cpf_generator.py' does not exist.</msg>
+<msg time="2024-10-04T01:35:16.759539" level="ERROR">Error in file 'C:\Users\Rafael\PycharmProjects\IZA_Automation\Resource\Settings.resource' on line 4: Library 'email_generator.py' does not exist.</msg>
+<msg time="2024-10-04T01:35:16.759950" level="ERROR">Error in file 'C:\Users\Rafael\PycharmProjects\IZA_Automation\Resource\Settings.resource' on line 5: Library 'telefone_generator.py' does not exist.</msg>
+<msg time="2024-10-04T01:35:17.068294" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

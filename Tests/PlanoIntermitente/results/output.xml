@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-10-04T06:05:04.382562" rpa="false" schemaversion="5">
+<suite id="s1" name="SeguradoB2BIntermitente" source="C:\Users\Rafael\PycharmProjects\IZA_Automation\Tests\PlanoIntermitente\SeguradoB2BIntermitente.robot">
+<test id="s1-t1" name="Consultar segurado por CPF no usuário Intermitente" line="8">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:04.555376" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T06:05:04.832981" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T06:05:04.555376" elapsed="1.845654"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:04.554476" elapsed="1.846554"/>
+</kw>
+<kw name="Inserir usuário e senha válidos para consulta do plano Intermitente" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_LoginAmbienteProd}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.402062" elapsed="0.025834"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:06.429036" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[1]/button'.</msg>
+<arg>locator=${Login.button_LoginAmbienteProd}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.427896" elapsed="0.047997"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.475893" elapsed="0.017860"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:06.494750" level="INFO">Typing text 'luan@beedelivery.com.br' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=luan@beedelivery.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.493753" elapsed="0.124006"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.618765" elapsed="0.015342"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:06.635104" level="INFO">Typing text 'Teste@123' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=Teste@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.635104" elapsed="0.077978"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.713082" elapsed="0.016638"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:06.730717" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.730717" elapsed="0.050540"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:06.401030" elapsed="0.380227"/>
+</kw>
+<kw name="Informo os dados válidos do CPF" owner="SeguradoB2BIntermitente_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.opção_SeguradosInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:06.782692" elapsed="2.130074"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:08.913774" level="INFO">Clicking element 'id:accordion-button-2'.</msg>
+<arg>locator=${SegIntermintente.opção_SeguradosInter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:08.913774" elapsed="0.035971"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:08.951009" level="INFO">Typing text '016.872.581-98' into text field 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[2]/div/input'.</msg>
+<arg>locator=${SegIntermintente.input_DadosSegurado}</arg>
+<arg>text=016.872.581-98</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:08.949745" elapsed="0.231348"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:09.182091" level="INFO">Clicking button 'Xpath=//button[contains(text(), 'Consultar')]'.</msg>
+<arg>locator=${SegIntermintente.button_ConsultarSegurado}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:09.181093" elapsed="0.045846"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:06.781257" elapsed="2.445682"/>
+</kw>
+<kw name="Consulta realizada com sucesso" owner="SeguradoB2BIntermitente_Steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=WYLLAMS XAVIER GOMES DA SILVA</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:09.227935" elapsed="1.095406"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.button_DetalhesSeguradoInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.324321" elapsed="0.012957"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:10.337278" level="INFO">Clicking button 'id:menu-button-16'.</msg>
+<arg>locator=${SegIntermintente.button_DetalhesSeguradoInter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.337278" elapsed="0.041921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.button_VerDetalhesSeguradoInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.379199" elapsed="0.014200"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:10.393399" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Ver detalhes')]'.</msg>
+<arg>locator=${SegIntermintente.button_VerDetalhesSeguradoInter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.393399" elapsed="0.119251"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.button_InfDetalhesSeguradoInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.513636" elapsed="0.036321"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:10.550956" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Cadastro')]'.</msg>
+<arg>locator=${SegIntermintente.button_InfDetalhesSeguradoInter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.549957" elapsed="0.042983"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Detalhes do segurado</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.592940" elapsed="0.010079"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=81001839688</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.603019" elapsed="0.007264"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=016.872.581-98</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.610283" elapsed="0.010649"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:09.226939" elapsed="1.393993"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:04.553484" elapsed="6.067448"/>
+</test>
+<test id="s1-t2" name="Consultar segurado por Bilhete no usuário Intermitente" line="14">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:10.622927" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T06:05:10.908713" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T06:05:10.621931" elapsed="3.419545"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:10.621931" elapsed="3.419545"/>
+</kw>
+<kw name="Inserir usuário e senha válidos para consulta do plano Intermitente" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_LoginAmbienteProd}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.042473" elapsed="0.030060"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:14.072533" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[1]/button'.</msg>
+<arg>locator=${Login.button_LoginAmbienteProd}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.072533" elapsed="0.069847"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.142380" elapsed="0.019879"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:14.163507" level="INFO">Typing text 'luan@beedelivery.com.br' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=luan@beedelivery.com.br</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.162259" elapsed="0.150758"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.313017" elapsed="0.022180"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:14.336193" level="INFO">Typing text 'Teste@123' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=Teste@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.335197" elapsed="0.063713"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.398910" elapsed="0.017226"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:14.417134" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.416136" elapsed="0.056874"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:14.042473" elapsed="0.431729"/>
+</kw>
+<kw name="Informo os dados válidos do Bilhete" owner="SeguradoB2BIntermitente_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.opção_SeguradosInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:14.476889" elapsed="2.182092"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:16.659994" level="INFO">Clicking element 'id:accordion-button-2'.</msg>
+<arg>locator=${SegIntermintente.opção_SeguradosInter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:16.658981" elapsed="0.049199"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.opção_SelecionarConsulta}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:16.708180" elapsed="0.115697"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:16.824870" level="INFO">Clicking element 'class:css-1k30vo8-control'.</msg>
+<arg>locator=${SegIntermintente.opção_SelecionarConsulta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:16.823877" elapsed="0.112797"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.opção_ConsultaBilhete}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:16.936674" elapsed="0.016452"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:16.953126" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Bilhete')]'.</msg>
+<arg>${SegIntermintente.opção_ConsultaBilhete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:16.953126" elapsed="0.083349"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:17.037635" level="INFO">Typing text '81001839688' into text field 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/div/div[1]/div[1]/div[2]/div[2]/div/input'.</msg>
+<arg>locator=${SegIntermintente.input_DadosSegurado}</arg>
+<arg>text=81001839688</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:17.036475" elapsed="0.093475"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:17.131146" level="INFO">Clicking button 'Xpath=//button[contains(text(), 'Consultar')]'.</msg>
+<arg>locator=${SegIntermintente.button_ConsultarSegurado}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:17.129950" elapsed="0.039623"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:14.475678" elapsed="2.693895"/>
+</kw>
+<kw name="Consulta realizada com sucesso" owner="SeguradoB2BIntermitente_Steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=WYLLAMS XAVIER GOMES DA SILVA</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:17.170718" elapsed="1.065891"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.button_DetalhesSeguradoInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.236609" elapsed="0.032080"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:18.269686" level="INFO">Clicking button 'id:menu-button-16'.</msg>
+<arg>locator=${SegIntermintente.button_DetalhesSeguradoInter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.268689" elapsed="0.055117"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.button_VerDetalhesSeguradoInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.325118" elapsed="0.014507"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:18.340620" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Ver detalhes')]'.</msg>
+<arg>locator=${SegIntermintente.button_VerDetalhesSeguradoInter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.339625" elapsed="0.127741"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegIntermintente.button_InfDetalhesSeguradoInter}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.467366" elapsed="0.024878"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T06:05:18.493280" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Cadastro')]'.</msg>
+<arg>locator=${SegIntermintente.button_InfDetalhesSeguradoInter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.493280" elapsed="0.060388"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Detalhes do segurado</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.553668" elapsed="0.010561"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=81001839688</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.564229" elapsed="0.011519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=016.872.581-98</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T06:05:18.575748" elapsed="0.007519"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:17.169573" elapsed="1.413694"/>
+</kw>
+<status status="PASS" start="2024-10-04T06:05:10.621931" elapsed="7.962336"/>
+</test>
+<doc>Teste Segurado Plano Intermitente portal B2B</doc>
+<status status="PASS" start="2024-10-04T06:05:04.383565" elapsed="14.200702"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="SeguradoB2BIntermitente">SeguradoB2BIntermitente</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-04T06:05:04.832981" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-10-04T06:05:10.908713" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

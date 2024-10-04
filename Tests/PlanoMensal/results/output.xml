@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-10-04T05:45:38.684867" rpa="false" schemaversion="5">
+<suite id="s1" name="SeguradoB2bMensal" source="C:\Users\Rafael\PycharmProjects\IZA_Automation\Tests\PlanoMensal\SeguradoB2bMensal.robot">
+<test id="s1-t1" name="Adicionar novo segurado no usuário Mensal" line="8">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:38.877926" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T05:45:39.176548" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T05:45:38.877926" elapsed="1.983227"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:38.876847" elapsed="1.984306"/>
+</kw>
+<kw name="Inserir usuário e senha válidos do plano Mensal" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:40.862235" elapsed="0.021171"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:40.884405" level="INFO">Typing text 'bonita35@gmail.com' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=${EmailValidoMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:40.883406" elapsed="0.124761"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:41.008167" elapsed="0.016652"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:41.025910" level="INFO">Typing text 'ParceiroIZA@1' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=${SenhaValidaMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:41.024819" elapsed="0.064244"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:41.089063" elapsed="0.011491"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:41.102010" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:41.100554" elapsed="0.051794"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:40.861153" elapsed="0.291195"/>
+</kw>
+<kw name="Informo os dados válidos do novo Segurado" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_Segurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:41.153450" elapsed="6.879275"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:48.033723" level="INFO">Clicking element 'class:css-13pmxen'.</msg>
+<arg>locator=${SegMensal.opção_Segurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:48.032725" elapsed="0.059690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_AdicionarSegurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:48.092415" elapsed="0.642117"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:48.735617" level="INFO">Clicking element 'xpath://*[@id="accordion-panel-2"]/a[2]/p'.</msg>
+<arg>locator=${SegMensal.opção_AdicionarSegurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:48.734532" elapsed="0.036648"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.input_Nome}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:48.771180" elapsed="0.499790"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:49.271967" level="INFO">Typing text 'Joinha Teste' into text field 'id:field-7'.</msg>
+<arg>locator=${SegMensal.input_Nome}</arg>
+<arg>text=Joinha Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.271967" elapsed="0.059229"/>
+</kw>
+<kw name="Generate Cpf" owner="CPF_Generator">
+<msg time="2024-10-04T05:45:49.332194" level="INFO">${cpf_gerado} = 588.546.006-01</msg>
+<var>${cpf_gerado}</var>
+<status status="PASS" start="2024-10-04T05:45:49.331196" elapsed="0.000998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:49.332586" level="INFO">Typing text '588.546.006-01' into text field 'id:field-8'.</msg>
+<arg>locator=${SegMensal.input_CPF}</arg>
+<arg>text=${cpf_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.332586" elapsed="0.070780"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:49.403366" level="INFO">Typing text '29121991' into text field 'id:field-9'.</msg>
+<arg>locator=${SegMensal.input_Nascimento}</arg>
+<arg>text=29121991</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.403366" elapsed="0.058911"/>
+</kw>
+<kw name="Generate Email" owner="Email_Generator">
+<msg time="2024-10-04T05:45:49.462277" level="INFO">${email_gerado} = 73tk177e@example.com</msg>
+<var>${email_gerado}</var>
+<status status="PASS" start="2024-10-04T05:45:49.462277" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:49.462277" level="INFO">Typing text '73tk177e@example.com' into text field 'id:field-10'.</msg>
+<arg>locator=${SegMensal.input_Email}</arg>
+<arg>text=${email_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.462277" elapsed="0.079825"/>
+</kw>
+<kw name="Generate Phone" owner="Telefone_Generator">
+<msg time="2024-10-04T05:45:49.543365" level="INFO">${telefone_gerado} = (84) 98951-7968</msg>
+<var>${telefone_gerado}</var>
+<status status="PASS" start="2024-10-04T05:45:49.543365" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:49.544364" level="INFO">Typing text '(84) 98951-7968' into text field 'id:field-11'.</msg>
+<arg>locator=${SegMensal.input_Telefone}</arg>
+<arg>text=${telefone_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.543365" elapsed="0.071114"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:49.614479" level="INFO">Clicking button 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/form/div[2]/span/button'.</msg>
+<arg>locator=${SegMensal.button_Confirmar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.614479" elapsed="0.047595"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:41.152348" elapsed="8.509726"/>
+</kw>
+<kw name="Segurado adicionado com sucesso" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Adição do segurado concluída com êxito.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T05:45:49.662074" elapsed="2.557268"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-04T05:45:52.219342" elapsed="2.201047"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:49.662074" elapsed="4.758315"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:38.875850" elapsed="15.545627"/>
+</test>
+<test id="s1-t2" name="Adicionar segurado no usuário Mensal com CPF já cadastrado" line="14">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:54.424389" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T05:45:54.927238" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T05:45:54.424389" elapsed="1.983256"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:54.423464" elapsed="1.984181"/>
+</kw>
+<kw name="Inserir usuário e senha válidos do plano Mensal" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.408649" elapsed="0.022433"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:56.431082" level="INFO">Typing text 'bonita35@gmail.com' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=${EmailValidoMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.431082" elapsed="0.125305"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.556387" elapsed="0.013068"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:56.570452" level="INFO">Typing text 'ParceiroIZA@1' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=${SenhaValidaMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.569455" elapsed="0.070606"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.640061" elapsed="0.013618"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:56.654675" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.653679" elapsed="0.048658"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:56.407645" elapsed="0.296006"/>
+</kw>
+<kw name="Informo os dados válidos do Segurado com CPF já existente" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_Segurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:56.703651" elapsed="2.133764"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:58.838414" level="INFO">Clicking element 'class:css-13pmxen'.</msg>
+<arg>locator=${SegMensal.opção_Segurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:58.838414" elapsed="0.200814"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_AdicionarSegurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:45:59.039228" elapsed="0.268519"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:45:59.308967" level="INFO">Clicking element 'xpath://*[@id="accordion-panel-2"]/a[2]/p'.</msg>
+<arg>locator=${SegMensal.opção_AdicionarSegurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:45:59.307747" elapsed="0.727462"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.input_Nome}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.036212" elapsed="0.042550"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:00.079761" level="INFO">Typing text 'Joinha Teste' into text field 'id:field-7'.</msg>
+<arg>locator=${SegMensal.input_Nome}</arg>
+<arg>text=Joinha Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.078762" elapsed="0.115313"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:00.194075" level="INFO">Typing text '925.198.360-75' into text field 'id:field-8'.</msg>
+<arg>locator=${SegMensal.input_CPF}</arg>
+<arg>text=925.198.360-75</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.194075" elapsed="0.096608"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:00.290683" level="INFO">Typing text '29121991' into text field 'id:field-9'.</msg>
+<arg>locator=${SegMensal.input_Nascimento}</arg>
+<arg>text=29121991</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.290683" elapsed="0.074750"/>
+</kw>
+<kw name="Generate Email" owner="Email_Generator">
+<msg time="2024-10-04T05:46:00.365433" level="INFO">${email_gerado} = omg0bhgqrk@example.com</msg>
+<var>${email_gerado}</var>
+<status status="PASS" start="2024-10-04T05:46:00.365433" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:00.366429" level="INFO">Typing text 'omg0bhgqrk@example.com' into text field 'id:field-10'.</msg>
+<arg>locator=${SegMensal.input_Email}</arg>
+<arg>text=${email_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.365433" elapsed="0.079861"/>
+</kw>
+<kw name="Generate Phone" owner="Telefone_Generator">
+<msg time="2024-10-04T05:46:00.446394" level="INFO">${telefone_gerado} = (93) 94050-6492</msg>
+<var>${telefone_gerado}</var>
+<status status="PASS" start="2024-10-04T05:46:00.446394" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:00.446394" level="INFO">Typing text '(93) 94050-6492' into text field 'id:field-11'.</msg>
+<arg>locator=${SegMensal.input_Telefone}</arg>
+<arg>text=${telefone_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.446394" elapsed="0.097832"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:00.545415" level="INFO">Clicking button 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/form/div[2]/span/button'.</msg>
+<arg>locator=${SegMensal.button_Confirmar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.545415" elapsed="0.059279"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:56.703651" elapsed="3.901043"/>
+</kw>
+<kw name="Segurado não é adicionado com sucesso" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Ops, parece que houve um erro.Verifique se os campos estão corretos</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-04T05:46:00.605693" elapsed="0.643479"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-04T05:46:01.249172" elapsed="2.182077"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:00.605693" elapsed="2.825556"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:45:54.422466" elapsed="9.009948"/>
+</test>
+<test id="s1-t3" name="Adicionar segurado no usuário Mensal com EMAIL já cadastrado" line="20">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:03.435497" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T05:46:03.703232" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T05:46:03.435497" elapsed="1.771089"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:03.434496" elapsed="1.772090"/>
+</kw>
+<kw name="Inserir usuário e senha válidos do plano Mensal" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.206586" elapsed="0.023727"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:05.231344" level="INFO">Typing text 'bonita35@gmail.com' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=${EmailValidoMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.230313" elapsed="0.106702"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.337015" elapsed="0.012170"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:05.350285" level="INFO">Typing text 'ParceiroIZA@1' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=${SenhaValidaMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.349185" elapsed="0.054508"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.403693" elapsed="0.015900"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:05.420619" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.419593" elapsed="0.049286"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:05.206586" elapsed="0.262293"/>
+</kw>
+<kw name="Informo os dados válidos do Segurado com EMAIL já existente" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_Segurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:05.469891" elapsed="2.376171"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:07.846062" level="INFO">Clicking element 'class:css-13pmxen'.</msg>
+<arg>locator=${SegMensal.opção_Segurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:07.846062" elapsed="0.049152"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_AdicionarSegurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:07.895214" elapsed="0.966915"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:08.863170" level="INFO">Clicking element 'xpath://*[@id="accordion-panel-2"]/a[2]/p'.</msg>
+<arg>locator=${SegMensal.opção_AdicionarSegurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:08.863170" elapsed="0.047006"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.input_Nome}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:08.910176" elapsed="0.051980"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:08.964320" level="INFO">Typing text 'Joinha Teste' into text field 'id:field-7'.</msg>
+<arg>locator=${SegMensal.input_Nome}</arg>
+<arg>text=Joinha Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:08.963320" elapsed="0.097579"/>
+</kw>
+<kw name="Generate Cpf" owner="CPF_Generator">
+<msg time="2024-10-04T05:46:09.060899" level="INFO">${cpf_gerado} = 424.552.583-51</msg>
+<var>${cpf_gerado}</var>
+<status status="PASS" start="2024-10-04T05:46:09.060899" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:09.062274" level="INFO">Typing text '424.552.583-51' into text field 'id:field-8'.</msg>
+<arg>locator=${SegMensal.input_CPF}</arg>
+<arg>text=${cpf_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:09.062274" elapsed="0.081485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:09.143759" level="INFO">Typing text '29121991' into text field 'id:field-9'.</msg>
+<arg>locator=${SegMensal.input_Nascimento}</arg>
+<arg>text=29121991</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:09.143759" elapsed="0.068796"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:09.213676" level="INFO">Typing text 'o5p5gxrk0@example.com' into text field 'id:field-10'.</msg>
+<arg>locator=${SegMensal.input_Email}</arg>
+<arg>text=o5p5gxrk0@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:09.212555" elapsed="0.096354"/>
+</kw>
+<kw name="Generate Phone" owner="Telefone_Generator">
+<msg time="2024-10-04T05:46:09.309906" level="INFO">${telefone_gerado} = (30) 91609-5079</msg>
+<var>${telefone_gerado}</var>
+<status status="PASS" start="2024-10-04T05:46:09.308909" elapsed="0.000997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:09.309906" level="INFO">Typing text '(30) 91609-5079' into text field 'id:field-11'.</msg>
+<arg>locator=${SegMensal.input_Telefone}</arg>
+<arg>text=${telefone_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:09.309906" elapsed="0.092618"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:09.403520" level="INFO">Clicking button 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/form/div[2]/span/button'.</msg>
+<arg>locator=${SegMensal.button_Confirmar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:09.403520" elapsed="0.064693"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:05.468879" elapsed="4.000830"/>
+</kw>
+<kw name="Segurado não é adicionado com sucesso" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:14.819678" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-04T05:46:14.820675" level="FAIL">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</msg>
+<arg>text=Ops, parece que houve um erro.Verifique se os campos estão corretos</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2024-10-04T05:46:09.469709" elapsed="5.357153">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-10-04T05:46:14.826862" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-04T05:46:09.469709" elapsed="5.358156">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-10-04T05:46:03.433511" elapsed="11.394354">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t4" name="Adicionar segurado no usuário Mensal com TELEFONE já cadastrado" line="26">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:14.830944" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T05:46:15.125646" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T05:46:14.830944" elapsed="3.707174"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:14.829936" elapsed="3.708182"/>
+</kw>
+<kw name="Inserir usuário e senha válidos do plano Mensal" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.539117" elapsed="0.019058"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:18.559174" level="INFO">Typing text 'bonita35@gmail.com' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=${EmailValidoMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.559174" elapsed="0.099916"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.659090" elapsed="0.014973"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:18.675061" level="INFO">Typing text 'ParceiroIZA@1' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=${SenhaValidaMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.675061" elapsed="0.062309"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.738664" elapsed="0.011547"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:18.750211" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.750211" elapsed="0.050456"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:18.539117" elapsed="0.261550"/>
+</kw>
+<kw name="Informo os dados válidos do Segurado com TELEFONE já existente" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_Segurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:18.800667" elapsed="2.112924"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:20.914588" level="INFO">Clicking element 'class:css-13pmxen'.</msg>
+<arg>locator=${SegMensal.opção_Segurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:20.913591" elapsed="0.071859"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_AdicionarSegurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:20.985450" elapsed="0.927752"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:21.914231" level="INFO">Clicking element 'xpath://*[@id="accordion-panel-2"]/a[2]/p'.</msg>
+<arg>locator=${SegMensal.opção_AdicionarSegurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:21.913202" elapsed="0.050537"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.input_Nome}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:21.963739" elapsed="0.256621"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:22.221357" level="INFO">Typing text 'Joinha Teste' into text field 'id:field-7'.</msg>
+<arg>locator=${SegMensal.input_Nome}</arg>
+<arg>text=Joinha Teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:22.220360" elapsed="0.083036"/>
+</kw>
+<kw name="Generate Cpf" owner="CPF_Generator">
+<msg time="2024-10-04T05:46:22.304597" level="INFO">${cpf_gerado} = 439.133.977-36</msg>
+<var>${cpf_gerado}</var>
+<status status="PASS" start="2024-10-04T05:46:22.303396" elapsed="0.001201"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:22.304597" level="INFO">Typing text '439.133.977-36' into text field 'id:field-8'.</msg>
+<arg>locator=${SegMensal.input_CPF}</arg>
+<arg>text=${cpf_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:22.304597" elapsed="0.081741"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:22.387374" level="INFO">Typing text '29121991' into text field 'id:field-9'.</msg>
+<arg>locator=${SegMensal.input_Nascimento}</arg>
+<arg>text=29121991</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:22.387374" elapsed="0.078084"/>
+</kw>
+<kw name="Generate Email" owner="Email_Generator">
+<msg time="2024-10-04T05:46:22.465458" level="INFO">${email_gerado} = vaqdnk3lx@example.com</msg>
+<var>${email_gerado}</var>
+<status status="PASS" start="2024-10-04T05:46:22.465458" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:22.466454" level="INFO">Typing text 'vaqdnk3lx@example.com' into text field 'id:field-10'.</msg>
+<arg>locator=${SegMensal.input_Email}</arg>
+<arg>text=${email_gerado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:22.465458" elapsed="0.096616"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:22.563137" level="INFO">Typing text '(61) 92889-8074' into text field 'id:field-11'.</msg>
+<arg>locator=${SegMensal.input_Telefone}</arg>
+<arg>text=(61) 92889-8074</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:22.562074" elapsed="0.085807"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:22.647881" level="INFO">Clicking button 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/form/div[2]/span/button'.</msg>
+<arg>locator=${SegMensal.button_Confirmar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:22.647881" elapsed="0.051071"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:18.800667" elapsed="3.898285"/>
+</kw>
+<kw name="Segurado não é adicionado com sucesso" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:28.004798" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-04T05:46:28.004798" level="FAIL">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</msg>
+<arg>text=Ops, parece que houve um erro.Verifique se os campos estão corretos</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2024-10-04T05:46:22.698952" elapsed="5.310297">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-10-04T05:46:28.009249" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-04T05:46:22.698952" elapsed="5.310297">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-10-04T05:46:14.828861" elapsed="13.180388">Text 'Ops, parece que houve um erro.Verifique se os campos estão corretos' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t5" name="Consultar segurado no usuário Mensal com sucesso" line="32">
+<kw name="Acessar a página de Login do Portal B2B" owner="Login_Steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:28.010336" level="INFO">Opening browser 'edge' to base url 'https://portal.hml.iza.com.vc/'.</msg>
+<msg time="2024-10-04T05:46:28.310421" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-04T05:46:28.010336" elapsed="3.691623"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:28.010336" elapsed="3.691623"/>
+</kw>
+<kw name="Inserir usuário e senha válidos do plano Mensal" owner="Login_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Usuario}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.703022" elapsed="0.025396"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:31.729491" level="INFO">Typing text 'bonita35@gmail.com' into text field 'id:field-1'.</msg>
+<arg>locator=${Login.input_Usuario}</arg>
+<arg>text=${EmailValidoMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.728418" elapsed="0.110554"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.input_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.838972" elapsed="0.015316"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:31.854288" level="INFO">Typing text 'ParceiroIZA@1' into text field 'id:field-2'.</msg>
+<arg>locator=${Login.input_Senha}</arg>
+<arg>text=${SenhaValidaMensal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.854288" elapsed="0.057265"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Login.button_Acessar}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.911553" elapsed="0.021052"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:31.933615" level="INFO">Clicking button 'xpath://*[@id="__next"]/div[2]/div[1]/div/div[1]/form/button'.</msg>
+<arg>locator=${Login.button_Acessar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.932605" elapsed="0.053482"/>
+</kw>
+<status status="PASS" start="2024-10-04T05:46:31.703022" elapsed="0.283065"/>
+</kw>
+<kw name="Informo os dados válidos do Segurado cadastrado" owner="SeguradoB2BMensal_Steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_Segurados}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:31.987588" elapsed="6.608567"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:38.596155" level="INFO">Clicking element 'class:css-13pmxen'.</msg>
+<arg>locator=${SegMensal.opção_Segurados}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:38.596155" elapsed="0.132481"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_ListarSegurado}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:38.728636" elapsed="0.802943"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:39.532577" level="INFO">Clicking element 'xpath://*[@id="accordion-panel-2"]/a[1]/p'.</msg>
+<arg>locator=${SegMensal.opção_ListarSegurado}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:39.532577" elapsed="0.046535"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.opção_BuscarSegurado}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-04T05:46:39.580109" elapsed="0.238821"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:39.819926" level="INFO">Typing text '171.268.516-34' into text field 'xpath://*[@id="__next"]/div/div[2]/div/div/div[2]/div/div[1]/div/div[2]/div[2]/div/input'.</msg>
+<arg>${SegMensal.opção_BuscarSegurado}</arg>
+<arg>text=171.268.516-34</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-04T05:46:39.818930" elapsed="0.116471"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-10-04T05:46:50.115504" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-04T05:46:50.115504" level="FAIL">Element 'id:menu-button-20' not visible after 10 seconds.</msg>
+<arg>${SegMensal.button_Opcoes}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-10-04T05:46:39.936398" elapsed="10.180326">Element 'id:menu-button-20' not visible after 10 seconds.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>locator=${SegMensal.button_Opcoes}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-04T05:46:50.116724" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SegMensal.button_Detalhes}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-04T05:46:50.116724" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>locator=${SegMensal.button_Detalhes}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-04T05:46:50.116724" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-04T05:46:31.987084" elapsed="18.129640">Element 'id:menu-button-20' not visible after 10 seconds.</status>
+</kw>
+<kw name="Segurado apresentado com sucesso" owner="SeguradoB2BMensal_Steps">
+<status status="NOT RUN" start="2024-10-04T05:46:50.117770" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-04T05:46:28.010336" elapsed="22.107434">Element 'id:menu-button-20' not visible after 10 seconds.</status>
+</test>
+<doc>Teste Segurado Plano Mensal portal B2B</doc>
+<status status="FAIL" start="2024-10-04T05:45:38.685863" elapsed="71.432867"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="3" skip="0" id="s1" name="SeguradoB2bMensal">SeguradoB2bMensal</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-04T05:45:39.176548" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-10-04T05:45:54.927238" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-10-04T05:46:03.703232" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-10-04T05:46:15.125646" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-10-04T05:46:28.310421" level="WARN">The msedgedriver version (128.0.2739.67) detected in PATH at C:\Users\Rafael\AppData\Local\Programs\Python\Python312\Scripts\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (129.0.2792.65); currently, msedgedriver 129.0.2792.65 is recommended for MicrosoftEdge 129.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
